@@ -1,26 +1,13 @@
-#include <string>
-using namespace std;
-
 class Solution {
 public:
     string mergeAlternately(string word1, string word2) {
-        int A = word1.size(), B = word2.size();
-        int a = 0, b = 0;
-        string result;
-
-        while (a < A && b < B) {
-            result += word1[a++];
-            result += word2[b++];
+        string res="";
+        for( int i=0; i<word1.size()||i<word2.size();i++){
+            if(i<word1.size())
+            res+=word1[i];
+            if(i<word2.size())
+            res+=word2[i];
         }
-
-        while (a < A) {
-            result += word1[a++];
-        }
-
-        while (b < B) {
-            result += word2[b++];
-        }
-
-        return result;
+        return res;
     }
 };
